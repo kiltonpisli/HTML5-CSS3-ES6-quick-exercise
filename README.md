@@ -2,6 +2,7 @@ Here is the exercise:
 ## HTML5/CSS3/ES6 quick exercise
 
 Using this html:
+
     <ul id="card-trigger">
         <li><a href="void(0)" data-sku="7">post 7</a></li>
         <li><a href="void(0)" data-sku="3">post 3</a></li>
