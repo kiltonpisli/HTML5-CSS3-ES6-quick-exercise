@@ -27,7 +27,7 @@
                 url: postUrl
             }).done(function(res){
                 if(!$("#post-"+res.id).length){
-                    var card = "<div class='post' id='post-"+res.id+"'>id: "+res.id+"<br> title: "+res.title+"<br> body: "+res.body+"<hr></div>";
+                    var card = "<div class='post' id='post-"+res.id+"'>id: "+res.id+"<br> title: "+res.title+"<br> body: "+res.body+"<br><a href='#' id='12' class='remove-link'>remove post</a><hr></div>";
                     $("#cards-holder").append(card);
                 }
             })
@@ -35,6 +35,10 @@
 
         $("#remover").click(function(){
             $("#cards-holder").empty();
+        });
+
+        $(document).on("click", ".remove-link", function() {
+            $(this).parent().remove();
         });
 
     </script>
