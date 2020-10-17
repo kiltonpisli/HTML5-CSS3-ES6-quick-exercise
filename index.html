@@ -6,7 +6,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <img class="background" src="https://images.unsplash.com/photo-1501959181532-7d2a3c064642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1070&q=80">
+    <div class="background"></div>
+    <!-- <img class="background" src="https://images.unsplash.com/photo-1501959181532-7d2a3c064642?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1070&q=80"> -->
     <ul id="card-trigger">
         <li><a href="#" class="post-link" data-sku="7">post 7</a></li>
         <li><a href="#" class="post-link" data-sku="3">post 3</a></li>
@@ -45,7 +46,10 @@
         });
 
         function createPost(id, title, body){
-            var bgImg = '<img class="card-background" src="https://images.unsplash.com/photo-1437419764061-2473afe69fc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80">';
+            var imgUrl = ["https://images.unsplash.com/photo-1602883522093-3bb023cc4f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+                          "https://images.unsplash.com/photo-1602883522093-3bb023cc4f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80",
+                          "https://images.unsplash.com/photo-1602883522093-3bb023cc4f12?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"];
+            var bgImg = '<img class="card-background" src="'+imgUrl[0]+'">';
             var post = '<div class="post" id="post-'+id+'">'+bgImg+
                         '<div class="content"><h1 class="post-title">'+title+
                         '</h1><p class="post-body">'+body+'</p><a href="#" id="'+id+'" class="remove-button">remove post</a></div></div>';
