@@ -16,7 +16,6 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
-        // URL:   https://jsonplaceholder.typicode.com/posts/{id}
 
         $(".post-link").click(function(){
             var postId = this.dataset.sku;
@@ -27,7 +26,7 @@
                 url: postUrl
             }).done(function(res){
                 if(!$("#post-"+res.id).length){
-                    var card = "<div class='post' id='post-"+res.id+"'>id: "+res.id+"<br> title: "+res.title+"<br> body: "+res.body+"<br><a href='#' id='12' class='remove-link'>remove post</a><hr></div>";
+                    var card = createPost(res.id, res.title, res.body);
                     $("#cards-holder").append(card);
                 }
             })
@@ -37,9 +36,18 @@
             $("#cards-holder").empty();
         });
 
-        $(document).on("click", ".remove-link", function() {
-            $(this).parent().remove();
+        $(document).on("click", ".remove-button", function() {
+            $(this).parent().parent().remove();
         });
+
+        function createPost(id, title, body){
+            var bgImg = '<img class="background" src="https://images.unsplash.com/photo-1437419764061-2473afe69fc2?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1190&q=80">';
+            var post = '<div class="post" id="post-'+id+'">'+bgImg+
+                        '<div class="content"><h1 class="post-title">'+title+
+                        '</h1><p class="post-body">'+body+'</p><a href="#" id="'+id+'" class="remove-button">remove post</a></div></div>';
+
+            return post;
+        }
 
     </script>
 </body>

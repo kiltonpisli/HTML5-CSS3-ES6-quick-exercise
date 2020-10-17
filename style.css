@@ -2,3 +2,70 @@ body{
     margin: 0;
     padding: 0;
 }
+a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+
+#cards-holder{
+    margin: 40px 0;
+    display: flex;
+    justify-content: space-around;
+}
+#cards-holder > .post{
+    width: 100%;
+    max-width: 400px;
+    min-height: 500px;
+    display: block;
+    overflow: hidden;
+    position: relative;
+    color: #fff;
+    border-radius: 15px;
+}
+#cards-holder > .post .background{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; 
+}
+#cards-holder > .post .content{
+    z-index: 1;
+    display: block;
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #0008;
+    padding: 30px;
+    padding-bottom: 120px;
+    box-sizing: border-box;
+    text-transform: capitalize;
+}
+#cards-holder > .post .content .post-title{
+    margin: 0;
+    line-height: 25px;
+}
+#cards-holder > .post .content .post-body{
+    font-size: 20px;
+    margin: 50px 0;
+    text-align: justify;
+}
+#cards-holder > .post .content .remove-button{
+    display: block;
+    background: #fff2;
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    font-size: 26px;
+    font-weight: bold;
+    border: 2px solid #fff;
+    color: #fff;
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    width: calc(100% - 100px);
+    transform: translateX(-50%);
+}
