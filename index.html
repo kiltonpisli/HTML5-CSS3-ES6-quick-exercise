@@ -16,9 +16,7 @@
     <a href="#" id="remover">remove cards</a>
     <div id="cards-holder"></div>
 
-
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-
+    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script>
 
@@ -52,6 +50,14 @@
 
             return post;
         }
+
+        $("#card-trigger").click(function(){
+            if($(this).hasClass("active")){
+                $(this).removeClass("active");
+            }else{
+                $(this).addClass("active");
+            }
+        });
 
     </script>
 </body>

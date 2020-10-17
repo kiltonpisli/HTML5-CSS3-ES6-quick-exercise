@@ -1,12 +1,12 @@
 body{
     margin: 0;
     padding: 0;
+    font-family: sans-serif;
 }
 a{
     text-decoration: none;
     color: #000;
 }
-
 
 .background{
     position: fixed;
@@ -35,21 +35,19 @@ a{
     border-radius: 7px;
     transition: .2s;
 }
-#card-trigger > li a:hover{
+#card-trigger > li a:hover, #remover:hover{
     background-color: #0002;
 }
 #remover{
     margin: 20px;
 }
 
-
-
 #cards-holder{
     margin: 40px 0;
     display: flex;
     justify-content: start;
     flex-wrap: wrap;
-    max-width: 1300px;
+    max-width: 1280px;
     width: 100%;
     position: relative;
     left: 50%;
@@ -95,8 +93,9 @@ a{
 }
 #cards-holder > .post .content .post-title{
     margin: 0;
-    line-height: 25px;
-    height: 120px;
+    line-height: 30px;
+    font-size: 27px;
+    height: 130px;
     display: flex;
     justify-content: center;
     align-items: flex-end;
@@ -112,7 +111,7 @@ a{
     text-align: center;
     padding: 20px;
     border-radius: 10px;
-    font-size: 26px;
+    font-size: 22px;
     font-weight: bold;
     border: 2px solid #fff;
     color: #fff;
@@ -122,3 +121,52 @@ a{
     width: calc(100% - 100px);
     transform: translateX(-50%);
 }
+
+
+
+
+@media (max-width: 600px) {
+    #card-trigger{
+        padding: 10px 15px;
+        display: block;
+        position: relative;
+        border: 2px solid #000;
+        border-radius: 7px;
+        margin: 20px;
+    }
+    #card-trigger.active{
+        padding-bottom: 0;
+    }
+    #card-trigger:before{
+        content: 'Posts';
+        display: inline-block;
+    }
+    #card-trigger:after{
+        content: "";
+        display: inline-block;
+        width: 7px;
+        height: 7px;
+        position: absolute;
+        right: 20px;
+        top: 13px;
+        transform: rotateZ(-45deg);
+        border-left: 1px solid #000;
+        border-bottom: 1px solid #000;
+    }
+    #card-trigger.active:after{
+        top: 15px;
+        transform: rotateZ(135deg);
+    }
+    #card-trigger > li a{
+        display: none;
+    }
+    #card-trigger.active > li a{
+        display: block;
+        margin: 5px 0px;
+        padding: 10px 0;
+        border: 0;
+    }
+    #remover{
+        display: block;
+    }
+  }
