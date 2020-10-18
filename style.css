@@ -166,6 +166,21 @@ a{
         padding: 10px 0;
         border: 0;
     }
+    #card-trigger.active > li:first-child a{
+        position: relative;
+        padding-top: 20px;
+    }
+    #card-trigger.active > li:first-child a:before{
+        position: absolute;
+        top: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        content: '';
+        display: block;
+        height: 100%;
+        width: calc(100% + 30px);
+        box-shadow: inset 0px 17px 10px -20px black;
+    }
     #remover{
         display: block;
     }
